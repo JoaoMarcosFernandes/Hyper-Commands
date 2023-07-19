@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "axios": "^1.4.0",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "name": "hyper-commands",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Mintrous/Hyper-Commands.git",
+  "author": "Guilherme Leite <leite_guilherme@outlook.com>",
+  "license": "MIT"
+}
