@@ -22,7 +22,7 @@ module.exports = {
             method: 'POST',
             url: 'https://hyperflow.kanbanize.com/api/v2/cards',
             headers: {
-                apikey: '12PIJFZkQDZAQBEX3eOVriYc4VxA4MhCIyS2V8XA',
+                apikey: process.env.KANBANIZE_APIKEY,
                 'Content-Type': 'application/json'
             },
             data: {
@@ -34,7 +34,7 @@ module.exports = {
                 "size": null,
                 "priority": 3,
                 "color": "42af49",
-                "position": 12,
+                "position": 100,
                 "column_id": 21,
                 "lane_id": 19,
                 "exceeding_reason": null,
@@ -61,7 +61,7 @@ module.exports = {
             .setTitle("Nova sugestão de melhoria! 🔥")
             .setDescription(`A sugestão de melhoria foi solicitada com sucesso! 🚀\n \nAcompanhe  o canal \"novas-features\" para ficar por dentro de todas novidades. \n\n\n> ** _Título_**\n>  ${title}\n\n> ** _Descrição_**\n>   ${desc}\n\n> ** _Solicitante_**\n>  <@${interaction?.user?.id}>`)
             .setThumbnail("https://media.licdn.com/dms/image/D4D0BAQFcD00YTNzysQ/company-logo_200_200/0/1686144708245?e=2147483647&v=beta&t=iR0Ao7Aa8J9oRhukS-Im3cvfLshN6iANLmfv8dV3HXI")
-            .setColor("#00ff2a")
+            .setColor("Green")
             .setFooter({
                 text: "Hyperflow",
                 iconURL: "https://media.licdn.com/dms/image/D4D0BAQFcD00YTNzysQ/company-logo_200_200/0/1686144708245?e=2147483647&v=beta&t=iR0Ao7Aa8J9oRhukS-Im3cvfLshN6iANLmfv8dV3HXI",
