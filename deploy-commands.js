@@ -29,7 +29,8 @@ const rest = new REST({ version: '10' }).setToken(TOKEN);
             Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
             {body: commands}
         )
-        console.log('Comandos resetados')
+        console.log('Comandos registrados')
+        console.log(data)
     } catch (error) {
         console.error(error)
     }
