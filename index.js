@@ -49,8 +49,8 @@ client.on(Events.InteractionCreate, async interaction => {
 
     if (command === 'kanbanize' && interaction.channelId == "1120850499680350259") {
         kanbanize.execute(interaction)
-    // } else if (command === 'ping') {
-    //     ping.execute(interaction)
+    } else if (command === 'ping') {
+        ping.execute(interaction)
     } else if (command === 'help') {
         help.execute(interaction)
     } else {
