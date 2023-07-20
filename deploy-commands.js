@@ -15,7 +15,6 @@ const commands = []
 
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`)
-    console.log(file)
     commands.push(command?.data?.toJSON())
 }
 
@@ -25,13 +24,12 @@ const rest = new REST({ version: '10' }).setToken(TOKEN);
 // deploy
 (async () => {
     try {
-        console.log(`Resetando ${commands.length} comandos...`)
-
-        const data = await rest.put(
+    console.log(`Resetando ${commands.length} comandos...`)
+        await rest.put(
             Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
             {body: commands}
         )
-        console.log(`Comandos registrados com sucesso.`)
+        console.log('Comandos resetados')
     } catch (error) {
         console.error(error)
     }

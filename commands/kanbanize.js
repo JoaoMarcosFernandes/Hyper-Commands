@@ -1,5 +1,9 @@
 const axios = require('axios')
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
+const dotenv = require('dotenv')
+dotenv.config()
+
+const { CHANNEL_ID, KANBANIZE_APIKEY } = process.env
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -17,7 +21,7 @@ module.exports = {
     async execute(interaction) {
         if (!interaction.isChatInputCommand()) return;
 
-        if (interaction.commandName === 'kanbanize' && interaction.channelId == "1120850499680350259") {
+        if (interaction.commandName === 'kanbanize' && interaction.channelId == CHANNEL_ID) {
 
             let title = interaction.options._hoistedOptions[0].value;
             let desc = interaction.options._hoistedOptions[1].value
@@ -25,7 +29,7 @@ module.exports = {
                 method: 'POST',
                 url: 'https://hyperflow.kanbanize.com/api/v2/cards',
                 headers: {
-                    apikey: process.env.KANBANIZE_APIKEY,
+                    apikey: KANBANIZE_APIKEY,
                     'Content-Type': 'application/json'
                 },
                 data: {
@@ -72,7 +76,6 @@ module.exports = {
                 .setTimestamp();
             await axios.request(options).then(function (response) {
                 interaction.reply({ embeds: [successEmbed] })
-                // interaction.reply({ content: `Sua sugestão de melhoria foi registrada com sucesso!  😄\n\n Acompanhe o canal "novas-features" para ficar por dentro de todas as atualizações. 🚀` })
             }).catch(function (error) {
                 console.log(error)
                 const failedEmbed = new EmbedBuilder()

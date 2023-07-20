@@ -7,7 +7,6 @@ const help = require('./commands/help')
 // dotenv
 const dotenv = require('dotenv')
 dotenv.config()
-const { TOKEN } = process.env
 
 // importacao dos comandos
 const fs = require('node:fs')
@@ -34,7 +33,7 @@ client.once(Events.ClientReady, c => {
     console.log(`${c.user.tag} realizou o login!`)
 })
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
 
 // Listener de interacoes com o bot
 client.on(Events.InteractionCreate, async interaction => {
@@ -47,7 +46,7 @@ client.on(Events.InteractionCreate, async interaction => {
         return
     }
 
-    if (command === 'kanbanize' && interaction.channelId == "1120850499680350259") {
+    if (command === 'kanbanize') {
         kanbanize.execute(interaction)
     } else if (command === 'ping') {
         ping.execute(interaction)
