@@ -56,9 +56,9 @@ client.on(Events.InteractionCreate, async interaction => {
     } else {
         const errorEmbed = new EmbedBuilder()
             .setAuthor({
-                name: "Esse comando ainda não foi registrado ❌",
+                name: "Esse comando ainda não foi registrado. ⚠️",
             })
-            .setTitle("Entre em contato com um administrador")
+            .setTitle("Entre em contato com um administrador!")
             .setThumbnail("https://media.licdn.com/dms/image/D4D0BAQFcD00YTNzysQ/company-logo_200_200/0/1686144708245?e=2147483647&v=beta&t=iR0Ao7Aa8J9oRhukS-Im3cvfLshN6iANLmfv8dV3HXI")
             .setColor("#ffff00")
             .setFooter({
