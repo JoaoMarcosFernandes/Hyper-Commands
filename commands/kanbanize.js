@@ -11,7 +11,7 @@ module.exports = {
                 .setRequired(true))
         .addStringOption(option =>
             option.setName('descricao')
-                .setDescription('Insira uma descricao para a sugestão de melhoria')
+                .setDescription('Insira uma descrição para a sugestão de melhoria')
                 .setRequired(true)),
 
     async execute(interaction) {
