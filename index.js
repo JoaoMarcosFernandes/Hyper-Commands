@@ -47,27 +47,25 @@ client.on(Events.InteractionCreate, async interaction => {
         return
     }
 
-    if (command === 'kanbanize' && interaction.channelId == "1118227062541529090") {
+    if (command === 'kanbanize' && interaction.channelId == "1120850499680350259") {
         kanbanize.execute(interaction)
-    } else if (command === 'ping') {
-        ping.execute(interaction)
+    // } else if (command === 'ping') {
+    //     ping.execute(interaction)
     } else if (command === 'help') {
         help.execute(interaction)
     } else {
-        const exampleEmbed = new EmbedBuilder()
+        const errorEmbed = new EmbedBuilder()
             .setAuthor({
-                name: "Comando não permitido nesse canal! ❌",
+                name: "Esse comando ainda não foi registrado ❌",
             })
-            .setTitle("Acesse o canal \"sugestões-de-melhorias\" para utilizar o comando!")
-            .setURL("https://discord.com/channels/1118227061669105705/1118227062541529090")
-
+            .setTitle("Entre em contato com um administrador")
             .setThumbnail("https://media.licdn.com/dms/image/D4D0BAQFcD00YTNzysQ/company-logo_200_200/0/1686144708245?e=2147483647&v=beta&t=iR0Ao7Aa8J9oRhukS-Im3cvfLshN6iANLmfv8dV3HXI")
-            .setColor("#ff0000")
+            .setColor("#ffff00")
             .setFooter({
                 text: "Hyperflow",
                 iconURL: "https://media.licdn.com/dms/image/D4D0BAQFcD00YTNzysQ/company-logo_200_200/0/1686144708245?e=2147483647&v=beta&t=iR0Ao7Aa8J9oRhukS-Im3cvfLshN6iANLmfv8dV3HXI",
             })
             .setTimestamp();
-        interaction.reply({ embeds: [exampleEmbed] })
+        interaction.reply({ embeds: [errorEmbed] })
     }
 })
