@@ -12,7 +12,6 @@ const exampleEmbed = new EmbedBuilder()
         { name: '\u200B', value: '\u200B' },
         { name: '🙋‍♀️ Lista todos os comandos', value: `**\`/help\`**`, inline: false },
         { name: '\u200B', value: '\u200B' },
-        { name: '\u200B', value: '\u200B' },
         { name: 'Vem mais por ai... 👀', value: "\u200B" },
     )
     .setThumbnail("https://media.licdn.com/dms/image/D4D0BAQFcD00YTNzysQ/company-logo_200_200/0/1686144708245?e=2147483647&v=beta&t=iR0Ao7Aa8J9oRhukS-Im3cvfLshN6iANLmfv8dV3HXI")
